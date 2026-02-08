@@ -64,13 +64,13 @@ Confirm Booking button
 
 Includes all necessary contact details:
 
-## 📍 Address
+📍 Address
 
-## 📞 Phone
+📞 Phone
 
-## ✉ Email
+ ✉ Email
 
-## 📘 Footer
+📘 Footer
 
 Quick navigation
 
