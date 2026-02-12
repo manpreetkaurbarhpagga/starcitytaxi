@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Star City Taxi Service | Delhi</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+
+
+<style>
+/* --- Reset & Base --- */
+*{ margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
+body{ background:#F3F8FF; color:#333; scroll-behavior:smooth; line-height:1.6;}
+a{text-decoration:none;}
+button{cursor:pointer; transition:0.3s;}
+img{max-width:100%; border-radius:10px;}
+h1::after{
+  content:"";
+  width:120px;
+  height:5px;
+  background: linear-gradient(135deg, #2563EB, #93C5FD);
+  display:block;
+  margin:15px auto 0;
+  border-radius:6px;
+}
+h4 {
+  position: relative;      /* required for pseudo-element */
+  text-align: center;      /* center the heading */
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: white;          /* dark blue text */
+  margin-bottom: 20px;
+}
+
+h4::after {
+  content: "";
+  width: 200px;                               /* underline width */
+  height: 5px;                                /* underline thickness */
+  background: #B3D9FF;  /* gradient blue */
+  display: block;
+  margin: 10px auto 0;                        /* space above & center */
+  border-radius: 6px;                          /* rounded edges */
+}
+
+
+
+
+h2{
+font-family: Georgia, serif;
+
+  font-size: 36px;
+  font-weight: 600;
+  color: #0F172A;
+ 
+}
+p{
+ font-family: Arial, Helvetica, sans-serif;
+}
+
+/* --- NAVBAR --- */
+nav{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background: linear-gradient(135deg, #1E40AF, #60A5FA);
+  padding:15px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+nav h2 {
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+nav a{
+  color:#fff;
+  margin-left:20px;
+  font-size:16px;
+  transition:0.3s;
+}
+nav a:hover{ color:#87CEEB; 
+ text-decoration: underline;
+}
+
+
+/* --- INTRO SECTION --- */
+#intro{
+  padding:80px 10%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+#intro h1{
+  font-size:3rem;
+  color:#0d6efd;
+  margin-bottom:20px;
+  animation: slideDown 1s ease;
+  
+}
+#intro p{
+  font-size:1.2rem;
+  color:#555;
+  max-width:600px;
+  margin-bottom:30px;
+  animation: fadeIn 2s ease;
+}
+.trust-cards{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.trust-cards .card{
+  background:#fff;
+  padding:25px;
+  border-radius:15px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+  width:220px;
+  transition:0.3s;
+}
+.trust-cards .card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 12px 25px rgba(0,0,0,0.15);
+}
+.trust-cards .card h3{ color:#0d6efd; margin-bottom:10px; }
+.trust-cards .card p{ color:#555; }
+#intro .hero-btn{
+  margin-top:40px;
+  padding:14px 35px;
+  background: linear-gradient(135deg, #1E40AF, #60A5FA);
+  color:#fff;
+  border-radius:30px;
+  font-size:1.1rem;
+}
+#intro .hero-btn:hover{
+ background:#60A5FA;
+
+  color:#000;
+}
+
+/* --- SECTIONS --- */
+section{
+  padding:60px 10%;
+}
+section h2{
+  text-align:center;
+  margin-bottom:40px;
+  font-size:32px;
+  color:#111;
+}
+section p{
+  font-size:18px;
+  text-align:center;
+  max-width:800px;
+  margin:0 auto;
+  margin-bottom:30px;
+}
+
+/* --- FEATURES --- */
+.features{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+.card{
+  background:white;
+  padding:30px;
+  border-radius:15px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+  transition:0.3s;
+}
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 12px 25px rgba(0,0,0,0.15);
+   border:2px solid #93C5FD;   /* light blue */
+}
+.card h3{ color:#0d6efd; margin-bottom:10px; }
+.card p{ color:#555; }
+
+/* --- ROUTES --- */
+.routes{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+ 
+}
+.route{
+  background:#fff;
+  padding:20px;
+  border-radius:15px;
+  text-align:center;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+.route img{
+  margin-bottom:15px;
+  border-radius:10px;
+}
+.route:hover{ transform:translateY(-5px); box-shadow:0 12px 25px rgba(0,0,0,0.15); 
+ border:2px solid #93C5FD;   /* light blue */
+
+}
+/* Default button style */
+.route button {
+  background: linear-gradient(135deg, #1E40AF, #60A5FA); /* dark to light blue */
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  border-radius: 8px;
+  padding: 10px 25px;
+  cursor: pointer;
+  transition: all 0.3s ease; /* smooth transition for hover */
+}
+
+/* Hover effect */
+.route button:hover {
+  background: linear-gradient(135deg, #2563EB, #93C5FD); /* lighter/darker gradient */
+  transform: scale(1.05); /* slight zoom */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+
+
+
+/* --- BOOKING FORM --- */
+form{
+  background:#fff;
+  padding:30px;
+  border-radius:15px;
+  max-width:600px;
+  margin:auto;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+form input, form select{
+  width:100%;
+  padding:12px;
+  margin-bottom:15px;
+  border-radius:5px;
+  border:1px solid #ccc;
+}
+form input[type="submit"]{
+   background: linear-gradient(135deg, #1E40AF, #60A5FA);
+  color:#fff;
+  border:none;
+  font-size:16px;
+  border-radius:8px;
+}
+form input[type="submit"]:hover{
+ background:#60A5FA;
+
+  color:#000;
+}
+
+/* --- FOOTER --- */
+footer{
+  background: linear-gradient(135deg, #1E40AF, #60A5FA);
+  color:#fff;
+  padding:40px 10%;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:30px;
+}
+.footer-grid h4{ margin-bottom:15px; }
+.footer-grid a{ color:#fff; display:block; margin-bottom:5px; }
+.footer-grid a:hover{ color:#87CEEB; }
+
+/* --- ANIMATIONS --- */
+@keyframes slideDown{ from{transform:translateY(-40px); opacity:0;} to{transform:translateY(0); opacity:1;} }
+@keyframes fadeIn{ from{opacity:0;} to{opacity:1;} }
+
+/* --- RESPONSIVE --- */
+@media(max-width:768px){
+  nav{ padding:15px 20px; }
+  section{ padding:40px 5%; }
+  #intro h1{ font-size:2.2rem; }
+  #intro p{ font-size:1rem; }
+}
+
+
+/* --- ABOUT SECTION --- */
+.about-container{
+  display:flex;
+  align-items:center;
+  gap:40px;
+  margin-top:40px;
+}
+
+.about-image{
+  flex:1;
+}
+
+.about-image img{
+  width:100%;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+.about-content{
+  flex:1;
+}
+
+.about-content p{
+  text-align:justify;
+  font-size:17px;
+  margin-bottom:15px;
+  color:#555;
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .about-container{
+    flex-direction:column;
+  }
+  .about-content p{
+    text-align:center;
+  }
+}
+/* Hamburger menu */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  border-radius: 3px;
+}
+
+/* Mobile links hidden by default */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 768px) {
+  nav {
+    padding: 15px 20px;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    background: linear-gradient(135deg, #1E40AF, #60A5FA);
+    position: absolute;
+    top: 70px;
+    left: 0;
+    padding: 20px 0;
+    border-radius: 0 0 15px 15px;
+  }
+
+  .nav-links a {
+    margin: 10px 0;
+    font-size: 18px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+.footer-grid a i {
+  margin-right: 8px;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.footer-grid a:hover i {
+  color: #87CEEB;
+}
+
+
+
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <h2>
+    <img src="images/taxilogo.png" alt="Star City Taxi Logo" style="height:50px; vertical-align:middle; margin-right:10px;">
+    STAR CITY TAXI
+  </h2>
+    <!-- Hamburger button for mobile -->
+  <div class="menu-toggle" id="mobile-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+   <div class="nav-links" id="nav-links">
+    <a href="#intro">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#routes">Routes</a>
+    <a href="#booking">Booking</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- INTRO SECTION -->
+<section id="intro">
+  <h1>Ride Smart with Star City Taxi</h1>
+  <p>24/7 reliable rides in Delhi & nearby cities. Quick booking, affordable fares, and safe journeys.</p>
+  <div class="trust-cards">
+    <div class="card"><h3>10k+ Rides</h3><p>Completed safely</p></div>
+    <div class="card"><h3>24/7 Service</h3><p>Anytime, anywhere</p></div>
+    <div class="card"><h3>Affordable Fares</h3><p>Transparent pricing</p></div>
+  </div>
+  <a href="#booking" class="hero-btn">Book Your Ride</a>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h1 style="text-align: center; color:#4169E1">About Us</h1>
+
+  <div class="about-container">
+    <div class="about-image">
+      <img src="images/about-taxi.jpg" alt="Star City Taxi Service">
+    </div>
+
+    <div class="about-content">
+      <p>
+        Star City Taxi Service provides reliable, affordable, and safe taxi services
+        across Delhi and nearby cities. With professional drivers and well-maintained
+        vehicles, we ensure comfort and punctuality for every journey.
+      </p>
+      <p>
+        Our fleet includes modern sedans, SUVs, and luxury taxis equipped with GPS
+        and advanced safety features. We are committed to excellent customer service,
+        timely pickups, and hassle-free rides for both business and leisure travel.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ROUTES -->
+<section id="routes">
+<h1 style="text-align: center; color:#4169E1">Popular Routes</h1>
+<div class="routes">
+  <div class="route">
+    <img src="images/taxi1.jpg" alt="Delhi to Agra">
+    Delhi → Agra<br><br>
+	<button onclick="location.href='#booking'">Book Now</button>
+</div>
+  
+  <div class="route">
+    <img src="images/taxi1.jpg" alt="Delhi to Jaipur">
+    Delhi → Jaipur<br><br>
+	<button onclick="location.href='#booking'">Book Now</button>
+</div>
+  <div class="route">
+    <img src="images/taxi1.jpg" alt="Delhi to Shimla">
+    Delhi → Shimla<br><br>
+	<button onclick="location.href='#booking'">Book Now</button>
+</div>
+  <div class="route">
+    <img src="images/taxi1.jpg" alt="Delhi to Chandigarh">
+    Delhi → Chandigarh<br><br>
+	<button onclick="location.href='#booking'">Book Now</button>
+</div>
+  <div class="route">
+    <img src="images/taxi1.jpg" alt="Delhi to Chandigarh">
+    Delhi → Meerut<br><br>
+	<button onclick="location.href='#booking'">Book Now</button>
+</div>
+  <div class="route">
+    <img src="images/taxi1.jpg" alt="Delhi to Chandigarh">
+    Delhi → Vrindavan/Mathura<br><br>
+	<button onclick="location.href='#booking'">Book Now</button>
+</div>
+  <div class="route">
+    <img src="images/taxi1.jpg" alt="Delhi to Chandigarh">
+    Delhi → Dehradun<br><br>
+	<button onclick="location.href='#booking'">Book Now</button>
+</div>
+  <div class="route">
+    <img src="images/taxi1.jpg" alt="Delhi to Chandigarh">
+    Delhi → Rishikesh<br><br>
+	<button onclick="location.href='#booking'">Book Now</button>
+</div>
+  <div class="route">
+    <img src="images/taxi1.jpg" alt="Delhi to Chandigarh">
+    Delhi → Shimla<br><br>
+	<button onclick="location.href='#booking'">Book Now</button>
+</div>
+  <div class="route">
+    <img src="images/taxi1.jpg" alt="Delhi to Chandigarh">
+    Delhi → Nainital<br><br>
+	<button onclick="location.href='#booking'">Book Now</button>
+</div>
+  <div class="route">
+    <img src="images/taxi1.jpg" alt="Delhi to Chandigarh">
+    Delhi → Mussoorie<br><br>
+	<button onclick="location.href='#booking'">Book Now</button>
+</div>
+  <div class="route">
+    <img src="images/taxi1.jpg" alt="Delhi to Chandigarh">
+    Delhi → Manali <br><br>
+	<button onclick="location.href='#booking'">Book Now</button>
+</div>
+  <div class="route">
+    <img src="images/taxi1.jpg" alt="Delhi to Chandigarh">
+    Delhi → Kolkata<br><br>
+	<button onclick="location.href='#booking'">Book Now</button>
+</div>
+  <div class="route">
+    <img src="images/taxi1.jpg" alt="Delhi to Chandigarh">
+    Delhi → Almora<br><br>
+	<button onclick="location.href='#booking'">Book Now</button>
+</div>
+  <div class="route">
+    <img src="images/taxi1.jpg" alt="Delhi to Chandigarh">
+    Delhi → Nainital<br><br>
+	<button onclick="location.href='#booking'">Book Now</button>
+</div>
+  
+</div>
+</section>
+
+<!-- BOOKING -->
+<section id="booking">
+<h1 style="text-align: center; color:#4169E1">Book Your Taxi</h1>
+<form>
+  <input type="text" placeholder="Your Name" required>
+  <input type="text" placeholder="Mobile Number" required>
+  <input type="text" placeholder="Pickup Location" required>
+  <input type="date" required>
+  <input type="submit" value="Confirm Booking">
+</form>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h1 style="text-align: center; color:#4169E1">Contact Us</h1>
+<p style="text-align: center; color:#1E90FF">
+📍 Near Bus Stand, Akbar Road, Delhi<br>
+📞 7892356789<br>
+✉ starcity@gmail.com
+</p>
+</section>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3479436.9721306153!2d72.56117680026414!3d31.609537671801668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1ad9cc37da87%3A0x63a402c04e0c0573!2sDelhi%20taxi%20services!5e0!3m2!1sen!2sin!4v1770932617810!5m2!1sen!2sin" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<!-- FOOTER -->
+<footer>
+<div class="footer-grid">
+  <div>
+    <h4>Star City Taxi</h4>
+    <p>Safe • Affordable • Reliable</p>
+  </div>
+  <div>
+    <h4>Quick Links</h4>
+    <a href="#intro">Home</a>
+    <a href="#booking">Booking</a>
+    <a href="#routes">Routes</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div>
+ <h4>Follow Us</h4>
+  <a href="https://www.facebook.com/yourpage" target="_blank">
+    <i class="fab fa-facebook-f"></i> Facebook
+  </a>
+  <a href="https://www.instagram.com/yourpage" target="_blank">
+    <i class="fab fa-instagram"></i> Instagram
+  </a>
+  <a href="https://twitter.com/yourpage" target="_blank">
+    <i class="fab fa-twitter"></i> Twitter
+  </a>
+</div>
+
+
+  <div>
+    <h4>Developed By</h4>
+    <p>Manpreet Kaur (2202940)<br>DOABA GROUP OF INSTITUTIONS</p>
+  </div>
+</div>
+</footer>
+<script>
+const menuToggle = document.getElementById('mobile-menu');
+const navLinks = document.getElementById('nav-links');
+
+menuToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+</script>
+<script>
+window.onload = function() {
+    alert("WELCOME TO STAR CITY TAXI SERVICE");
+}
+</script>
+
+</body>
+</html>
